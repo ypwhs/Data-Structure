@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 #pragma pack(push, 1)
 typedef struct {
     unsigned short type;                 /* Magic identifier            */

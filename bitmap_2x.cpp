@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 #pragma pack(push, 1)
 typedef struct {
     unsigned short type;                 /* Magic identifier            */
@@ -39,11 +38,10 @@ int main(){
         printf("open fill error!\n");
         return -1;
     }
-    printf("%ld, %ld\n", sizeof(HEADER), sizeof(INFOHEADER));
 
-    fread((char *)&header , sizeof(HEADER), 1, pFile);
+    fread((char *)&header, sizeof(HEADER), 1, pFile);
     printf("filesize:%d, offset:%d\n", header.size, header.offset);
-    if(header.type != 0x4D42){
+    if(header.type != 0x4D42){  //BM
         printf("bitmap file format error\n");
         return -1;
     }
